@@ -5,6 +5,8 @@
 
 <ul>
   {{#each model as |blog|}}
-     <li><img src={{blog.image}} width=300px><h3>{{blog.heading}}</h3> {{blog.starter}}<br>{{blog.date}}<br>{{blog.rate}}</li>
+     <li><img src={{blog.image}} width=500px height=200px><h3>{{blog.heading}}</h3> {{blog.starter}}<br>{{blog.date}}<br>{{blog.rate}} {{blog-tile blog=blog destroyBlog="destroyBlog"}}</li>
   {{/each}}
 </ul>
+
+{{new-blog saveBlog2="saveBlog3"}}
