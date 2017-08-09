@@ -1,1 +1,10 @@
 <h1> Welcome to my blog</h1>
+
+<h2>Today's Top Stories</h2>
+
+
+<ul>
+  {{#each model as |blog|}}
+     <li><img src={{blog.image}} width=300px><h3>{{blog.heading}}</h3> {{blog.starter}}<br>{{blog.date}}<br>{{blog.rate}}</li>
+  {{/each}}
+</ul>
