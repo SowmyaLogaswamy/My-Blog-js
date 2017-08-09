@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
+<div id="container" class="container">
 
-{{!-- Feel free to remove this! --}}
+    <div class="row">
 
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            {{#link-to 'index' class="navbar-brand"}}My Blog{{/link-to}}
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+              <li class="active">{{#link-to 'about'}}About{{/link-to}}</li>
+              <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 {{outlet}}
+
+</div>
+  </div>
