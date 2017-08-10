@@ -7,5 +7,6 @@ export default DS.Model.extend({
   content: DS.attr(),
   starter: DS.attr(),
   date: DS.attr(),
-  rate: DS.attr()
+  rate: DS.attr(),
+  comments: DS.hasMany('comment', { async: true })
 });

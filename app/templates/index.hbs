@@ -1,18 +1,21 @@
 <h1>Today's Top Stories</h1>
 
-<div class="row">
-  <div class="col-md-2"></div>
 
 <ul>
-  {{#each model as |blog|}}
+  {{#each model.blogs as |blog|}}
      <li><h3>{{blog.heading}}</h3><img src={{blog.image}} width=500px height=200px><h4>{{blog.topic}}</h4> {{blog.starter}}<br>{{blog.date}}<br>{{blog.rate}}
        {{blog-tile blog=blog}}</li>
   {{/each}}
 </ul>
 
-<div class="col-md-2"></div>
-</div>
-
 
 
 {{new-blog saveBlog2="saveBlog3"}}
+
+<h2>Comments</h2>
+
+<ul>
+  {{#each model.comments as |comment|}}
+    <li>{{comment.rating}} - {{comment.content}} - by {{comment.author}}</li>
+  {{/each}}
+</ul>
