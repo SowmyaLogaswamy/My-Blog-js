@@ -10,6 +10,7 @@ const Router = Ember.Router.extend({ //defines a constant Router whose value can
 Router.map(function() {
   this.route('about');
   this.route('contact');
+  this.route('blog', {path: '/blog/:blog_id'});
 });
 
 export default Router; //makes router constant available to other parts of app

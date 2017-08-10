@@ -6,7 +6,7 @@
 <ul>
   {{#each model as |blog|}}
      <li><h3>{{blog.heading}}</h3><img src={{blog.image}} width=500px height=200px><h4>{{blog.topic}}</h4> {{blog.starter}}<br>{{blog.date}}<br>{{blog.rate}}
-       {{blog-tile blog=blog update="update" destroyBlog="destroyBlog"}}</li>
+       {{blog-tile blog=blog}}</li>
   {{/each}}
 </ul>
 
