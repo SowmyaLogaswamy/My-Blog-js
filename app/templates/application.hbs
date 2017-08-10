@@ -1,5 +1,8 @@
 <div id="container" class="container">
-
+  <header class="jumbotron">
+    <h1><em>Sowmya's Blog</em></h1>
+    <h2><em>Welcome friends!!</em></h2>
+  </header>
     <div class="row">
 
       <nav class="navbar navbar-inverse">
@@ -15,7 +18,21 @@
           </div>
         </div>
       </nav>
-{{outlet}}
+    </div>
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              {{outlet}}
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        <hr>
+        <footer>
+          {{#link-to 'contact'}}You could find all top stories here!{{/link-to}}
+        </footer>
+      </div>
 
+
+<div id="footer" class="container">
+  <p>{{fa-icon "heart"}}  from sowmya, 2017</p>
 </div>
-  </div>

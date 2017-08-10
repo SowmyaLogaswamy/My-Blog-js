@@ -9,6 +9,7 @@ export default Ember.Component.extend({
     saveBlog1() {
       var params = {
         topic: this.get('topic'),
+        heading: this.get('heading'),
         image: this.get('image'),
         content: this.get('content'),
         starter: this.get('starter'),

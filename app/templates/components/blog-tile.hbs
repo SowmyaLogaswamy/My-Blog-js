@@ -1,3 +1,4 @@
 <li>
-  <button {{action 'delete' blog}}>Delete Blog</button>
+  {{update-blog blog=blog update="update"}}
+   <button class="btn btn-primary" {{action 'delete' blog}}>Delete Blog</button>
 </li>
