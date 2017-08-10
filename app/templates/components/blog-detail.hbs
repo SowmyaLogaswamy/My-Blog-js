@@ -2,5 +2,13 @@
 <br>
 <p><img src={{blog.image}} width = 400px height = 250px alt={{blog.topic}}></p>
  <em><p>Cost: {{blog.rate}}<br>{{blog.date}}</p></em><br>
+
+ <h2> Comments </h2>
+<ul>
+  {{#each blog.comments as |comment|}}
+    {{comment-tile comment=comment}}
+  {{/each}}
+</ul>
+
 <button class="btn btn-primary" {{action 'delete' blog}}>Delete</button><br>
 <br>

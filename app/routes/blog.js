@@ -5,18 +5,36 @@ export default Ember.Route.extend({
    return this.store.findRecord('blog', params.blog_id);
  },
  actions: {
-     update(rental, params) {
+     update(blog, params) {
        Object.keys(params).forEach(function(key) {
          if(params[key]!==undefined) {
-           rental.set(key,params[key]);
+           blog.set(key,params[key]);
          }
        });
-       rental.save();
+       blog.save();
        this.transitionTo('index');
      },
-     destroyBlog(rental) {
-       rental.destroyRecord();
-       this.transitionTo('index');
-     }
+     destroyBlog(blog) {
+      var comment_deletions = blog.get('comments').map(function(comment) {
+        return comment.destroyRecord();
+      });
+      Ember.RSVP.all(comment_deletions).then(function() {
+        return blog.destroyRecord();
+      });
+      this.transitionTo('index');
+    },
+     destroyComment(comment) {
+      comment.destroyRecord();
+      this.transitionTo('index');
+    },
+     saveComment(params) {
+      var newComment = this.store.createRecord('comment', params);
+      var blog = this.context._internalModel;
+      blog.get('comments').addObject(newComment);
+      newComment.save().then(function() {
+        return blog.save();
+      });
+      this.transitionTo('blog', blog);
+    },
    }
  });
